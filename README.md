@@ -25,3 +25,6 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 # 这是 dev分支的内容 
 创建此分支时并没有 拉取 远程仓库数据
+
+# 这是 dev分支的内容 2
+创建此分支时并没有 拉取 远程仓库数据2

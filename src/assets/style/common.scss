@@ -1,0 +1,51 @@
+/* the common style */
+$min-width: 540px;
+$max-width: 1024px;
+html {
+  width: 100%;
+  min-width: $min-width;
+  min-height: 100vh;
+  // -webkit-user-select: none;
+}
+body {
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+// 页面容器
+.wrap {
+  overflow: auto;
+  position: relative;
+  max-width: $max-width;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #fff;
+  transform: translateY(0);
+  opacity: 1;
+}
+// 滚动条
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.23);
+}
+// 页面动画
+.page-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.page-fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.page-fade-enter,
+.page-fade-leave-to {
+  transform: translateY(50px);
+  opacity: 0;
+}

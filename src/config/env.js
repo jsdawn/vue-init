@@ -3,16 +3,15 @@
  *
  * baseUrl: 域名地址
  */
-import { IP_DEV, IP_PRO } from "./ip";
 
 let baseUrl = "";
 
 if (process.env.NODE_ENV == "development") {
   // 本地环境 npm run dev
-  baseUrl = IP_DEV;
+  baseUrl = window.SITE_CONFIG["devUrl"];
 } else if (process.env.NODE_ENV == "production") {
   // 打包之后 npm run build
-  baseUrl = IP_PRO;
+  baseUrl = window.SITE_CONFIG["proUrl"];
 }
 
 export { baseUrl };

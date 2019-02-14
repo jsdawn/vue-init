@@ -2,9 +2,11 @@
   <div class="wrap">
     <h1>登录页</h1>
     <h3>用户名：</h3>
-    <input type="text" v-model="userName">
+    <input type="text"
+           v-model="userName">
     <h3>密码：</h3>
-    <input type="text" v-model="password">
+    <input type="text"
+           v-model="password">
     <hr>
     <button @click="updUser">获取vuex-state</button>
     <h4 v-text="userName"></h4>
@@ -21,10 +23,10 @@
 
 <script>
 import loading from "@/components/loading";
-import { getCom } from "@/config/api";
+import { getMenuList } from "@/config/api";
 
 export default {
-  data() {
+  data () {
     return {
       loading_show: true //是否显示加载动画
     };
@@ -34,41 +36,38 @@ export default {
   },
   computed: {
     userName: {
-      get() {
+      get () {
         return this.$store.state.userName;
       },
-      set(val) {
+      set (val) {
         this.$store.commit("upd_userName", val);
       }
     },
     password: {
-      get() {
+      get () {
         return this.$store.state.password;
       },
-      set(val) {
+      set (val) {
         this.$store.commit("upd_password", val);
       }
     }
   },
-  mounted() {
+  mounted () {
     console.log(this.$store.state);
   },
   methods: {
-    updUser() {
+    updUser () {
       console.log(this.userName);
       console.log(this.$store.state.userName);
       console.log(this.password);
       console.log(this.$store.state.password);
     },
-    async getData() {
+    async getData () {
       console.log("-- begin --");
       let params = {
-        articleId: "a72b0aecbeb1489097e4557b74afd15e",
-        sn: "",
-        count: "asd",
-        a: "22"
+        id: 3
       };
-      let res = await getCom(params);
+      let res = await getMenuList(params);
       console.log(res);
       if (res) {
         console.log("返回正确数据");

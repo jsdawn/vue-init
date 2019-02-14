@@ -9,8 +9,14 @@
 import { baseUrl } from "./env";
 import req from "./http";
 
-// 获取评论
-export const getCom = param => {
-  const url = baseUrl + "/oa/login";
+// 获取主题列表
+export const getThemeList = param => {
+  const url = baseUrl + "/mp/theme/list";
+  return req.get(url, param);
+};
+
+// 获取主题内菜单列表
+export const getMenuList = param => {
+  const url = baseUrl + "/mp/menu/list";
   return req.post(url, param);
 };
